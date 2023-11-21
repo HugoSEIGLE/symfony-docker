@@ -65,6 +65,15 @@ services:
     networks:
       - app_network
 
+  # Redis service
+  redis.local:
+    image: "redis:alpine"
+    container_name: ${APP_SLUG}_redis
+    ports:
+      - "6379:6379"
+    networks:
+      - app_network
+
 # Docker Networks
 
 networks:
